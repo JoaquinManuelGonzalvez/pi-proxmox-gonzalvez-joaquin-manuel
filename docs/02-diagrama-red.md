@@ -33,7 +33,7 @@ Diseñar la red de proxmox antes de su instalación junto a sus servicios
 flowchart TD
     classDef default fill:#1e2235,stroke:#3b436b,stroke-width:2px,color:#fff;
     
-    Internet["Internet o red centro"] --> PVE["pve-gonzalvez IP: 10.0.2.30 (vmbr0) / 192.168.23.10 (vmbr1)"]
+    Internet["Internet o red centro"] --> PVE["pve-gonzalvez 10.0.2.30/192.168.23.10"]
     
     PVE --> Vmbr["Red de Laboratorio<br>192.168.23.0/24"]
     
