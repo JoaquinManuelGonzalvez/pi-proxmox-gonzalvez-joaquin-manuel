@@ -28,10 +28,16 @@ Diseñar la red de proxmox antes de su instalación junto a sus servicios
 |Servidor ASO|srv-aso|192.168.23.20|Servicio principal|Cargas del proyecto|
 |Cliente|cli-linux|192.168.23.30|Pruebas|Cargas del proyecto|
 
-## Evidencias
-
-## Incidencias
-
-## Conclusion
+## Diagrama
+graph TD
+    classDef default fill:#1e2235,stroke:#3b436b,stroke-width:2px,color:#fff;
+    
+    Internet["Internet o red centro"] --> PVE["pve-gonzalvez<br>Nodo Proxmox<br>IP: 10.0.2.30 (vmbr0) / 192.168.23.10 (vmbr1)"]
+    
+    PVE --> Vmbr["Red de Laboratorio<br>192.168.23.0/24"]
+    
+    Vmbr --> Srv["srv-aso<br>Servicio ASO<br>IP: 192.168.23.20"]
+    Vmbr --> Cli["cli-linux<br>Cliente pruebas<br>IP: 192.168.23.30"]
+    
 
 [Volver al indice](../README.md)
