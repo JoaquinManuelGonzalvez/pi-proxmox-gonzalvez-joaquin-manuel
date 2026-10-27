@@ -63,7 +63,7 @@ df -h
 
 ## Incidencias
 
-- El instalador indicaba que no había soporte de virtualización por hardware (KVM).** Se debía a que la virtualización anidada no llegaba a la VM.
+- El instalador indicaba que no había soporte de virtualización por hardware (KVM). Se debía a que la virtualización anidada no llegaba a la VM.
 - /dev/kvm no existía en el nodo..
 
 ## Conclusion
