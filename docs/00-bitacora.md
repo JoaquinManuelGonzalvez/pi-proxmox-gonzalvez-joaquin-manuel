@@ -20,8 +20,6 @@ commit dentro de su entrada de bitacora.
 
 ## Sesion 03 - 27/10/2026
 
-## Sesion 03 - 27/10/2026
-
 - Objetivo: instalar Proxmox VE de forma virtualizada en una maquina virtual de VirtualBox y comprobar la virtualizacion anidada.
 - Acciones realizadas:
   - Se creo la VM pve-gonzalvez (Debian 64 bits) con 6 CPU, 10240 MB de RAM y disco Proxmox_1.vdi de 80 GB, reservando recursos para el sistema anfitrion.
