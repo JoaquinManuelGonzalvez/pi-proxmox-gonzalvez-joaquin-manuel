@@ -61,11 +61,6 @@ df -h
 ### Salida de comandos
 ![Salida de comandos](../evidencias/capturas-o-salidas/s03-salida-comandos-proxmox.PNG)
 
-## Incidencias
-
-- El instalador indicaba que no había soporte de virtualización por hardware (KVM). Se debía a que la virtualización anidada no llegaba a la VM.
-- /dev/kvm no existía en el nodo..
-
 ## Conclusion
 
 Se instaló Proxmox VE dentro de una VM de VirtualBox con 6 CPU, 10 GB de RAM y un disco de 80 GB, usando un adaptador NAT y otro solo-anfitrión. La práctica permitió comprender los requisitos de la virtualización anidada y cómo preparar el entorno para un hipervisor virtualizado.
