@@ -34,7 +34,5 @@ commit dentro de su entrada de bitacora.
   - Esperado: que el instalador detectara KVM y que existiera /dev/kvm. Metodo: aviso del instalador y ls /dev/kvm. Resultado: el instalador mostro "No support for hardware-accelerated KVM virtualization detected" y /dev/kvm no existia.
   - Esperado: vmbr1 activo con 192.168.23.10/24. Metodo: ip -br addr.
   - Esperado: acceso al panel desde el navegador del anfitrion. Metodo: https://192.168.23.10:8006.
-- Incidencias y solucion o estado pendiente:
-  - Aviso de KVM no disponible en el instalador y /dev/kvm inexistente.
 
 [Volver al indice](../README.md)
