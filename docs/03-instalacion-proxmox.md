@@ -42,9 +42,9 @@ nano /etc/network/interfaces
 ls /dev/kvm
 egrep -c '(vmx|svm)' /proc/cpuinfo
 
-hostnamectl
-ip -br addr
-pveversion
+hostnamectl,
+ip -br addr,
+pveversion,
 df -h
 
 ## Evidencias
