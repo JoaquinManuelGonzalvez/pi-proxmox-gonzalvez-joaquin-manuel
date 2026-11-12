@@ -22,7 +22,7 @@ commit dentro de su entrada de bitacora.
 
 - Objetivo: instalar Proxmox VE de forma virtualizada en una maquina virtual de VirtualBox y comprobar la virtualizacion anidada.
 - Acciones realizadas:
-  - Se creo la VM pve-gonzalvez (Debian 64 bits) con 6 CPU, 10240 MB de RAM y disco Proxmox_1.vdi de 80 GB, reservando recursos para el sistema anfitrion.
+  - Se creo la VM pve-gonzalvez (Debian 64 bits) con 3 CPU, 8192 MB de RAM y disco Proxmox_1.vdi de 80 GB, reservando recursos para el sistema anfitrion.
   - Se configuraron dos adaptadores de red: NAT (adaptador 1) y solo-anfitrion (adaptador 2).
   - Se habilito VT-x/AMD-V anidado con la VM apagada.
   - Se monto la ISO de Proxmox VE y se instalo sobre el VDI.
@@ -31,7 +31,7 @@ commit dentro de su entrada de bitacora.
   - Se uso virtualizacion anidada porque Proxmox necesita VT-x/AMD-V para ejecutar maquinas KVM dentro de la VM.
   - Se anadio vmbr1 despues de instalar porque el instalador solo configura una tarjeta de red; asi se separa el trafico en dos bridges independientes (vmbr0 para la salida externa y vmbr1 para la red interna).
 - Pruebas y resultados:
-  - Esperado: que el instalador detectara KVM y que existiera /dev/kvm. Metodo: aviso del instalador y ls /dev/kvm. Resultado: el instalador mostro "No support for hardware-accelerated KVM virtualization detected" y /dev/kvm no existia.
+  - Esperado: que el instalador detectara KVM y que existiera /dev/kvm. Metodo: aviso del instalador y ls /dev/kvm. 
   - Esperado: vmbr1 activo con 192.168.23.10/24. Metodo: ip -br addr.
   - Esperado: acceso al panel desde el navegador del anfitrion. Metodo: https://192.168.23.10:8006.
 
