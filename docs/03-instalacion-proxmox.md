@@ -59,7 +59,7 @@ df -h
 ![Almacenamiento de Proxmox](../evidencias/capturas-o-salidas/s03-almacenamiento-proxmox.PNG)
 
 ### Salida de comandos
-![Salida de comandos](../evidencias/capturas-o-salidas/s03-salida-comandos-proxmox.PNG)
+![Salida de comandos](../evidencias/capturas-o-salidas/s03-salida-comandos-proxmox.png)
 
 ## Conclusion
 
