@@ -9,7 +9,7 @@ Instalar Proxmox VE de forma virtualizada dentro de una máquina virtual de Virt
 | Paso | Acción |
 |---|---|
 | 1 | Abrir VirtualBox y registrar su versión: 7.1.2 |
-| 2 | Crear la VM Linux de 64 bits pve-gonzalvez (6 CPU, 10 GB de RAM, disco VDI de 80 GB) |
+| 2 | Crear la VM Linux de 64 bits pve-gonzalvez (3 CPU, 8 GB de RAM, disco VDI de 80 GB) |
 | 3 | Reservar recursos para el sistema anfitrión |
 | 4 | Configurar los adaptadores de red: NAT y solo-anfitrión |
 | 5 | Con la VM apagada, habilitar la virtualización anidada y comprobar que funciona |
@@ -22,8 +22,8 @@ Instalar Proxmox VE de forma virtualizada dentro de una máquina virtual de Virt
 |---|---|
 | Nombre | pve-gonzalvez |
 | Sistema operativo | Debian (64-bit) |
-| Memoria base | 10240 MB |
-| Procesadores | 6 |
+| Memoria base | 8192 MB |
+| Procesadores | 3 |
 | Orden de arranque | Disquete, Óptica, Disco duro |
 | Aceleración | Paginación anidada, VT-x/AMD-V anidado, PAE/NX, paravirtualización KVM |
 | Memoria de vídeo | 7 MB (controlador VMSVGA) |
@@ -63,6 +63,6 @@ df -h
 
 ## Conclusion
 
-Se instaló Proxmox VE dentro de una VM de VirtualBox con 6 CPU, 10 GB de RAM y un disco de 80 GB, usando un adaptador NAT y otro solo-anfitrión. La práctica permitió comprender los requisitos de la virtualización anidada y cómo preparar el entorno para un hipervisor virtualizado.
+Se instaló Proxmox VE dentro de una VM de VirtualBox con 3 CPU, 8 GB de RAM y un disco de 80 GB, usando un adaptador NAT y otro solo-anfitrión. La práctica permitió comprender los requisitos de la virtualización anidada y cómo preparar el entorno para un hipervisor virtualizado.
 
 [Volver al indice](../README.md)
