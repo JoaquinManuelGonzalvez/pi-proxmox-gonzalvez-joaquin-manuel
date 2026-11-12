@@ -14,7 +14,7 @@ Instalar Proxmox VE de forma virtualizada dentro de una máquina virtual de Virt
 | 4 | Configurar los adaptadores de red: NAT y solo-anfitrión |
 | 5 | Con la VM apagada, habilitar la virtualización anidada y comprobar que funciona |
 | 6 | Montar la ISO autorizada e instalar Proxmox VE dentro del VDI |
-| 7 | Tras la instalación, entrar por la consola de la VM y editar /etc/network/interfaces para añadir, después del bloque de vmbr0, el bridge vmbr1 (tarjeta solo-anfitrión) con la IP 192.168.23.10/24 |
+| 7 | Tras la instalación, entrar por la consola de la VM y editar /etc/network/interfaces para añadir, después del bloque de vmbr0, el bridge vmbr1 (tarjeta solo-anfitrión) con la IP 192.168.56.10/24 |
 
 ### Características de la máquina virtual
 
