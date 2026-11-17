@@ -81,7 +81,7 @@ pvesm status
 df -h
 ```
 
-Captura 1:
+![Revisión Almacenamiento](../evidencias/capturas-o-salidas/s03-revision-almacenamiento.png)
 
 | Almacenamiento | Tipo | Contenido que admite | Espacio libre (KiB) | Uso |
 |---|---|---|---|---|
@@ -99,7 +99,7 @@ pvesm status
 
 Comprobación: el almacenamiento 'backups' aparece como 'active'
 
-Captura 2: 
+![Creación Backups](../evidencias/capturas-o-salidas/s03-creacion-backups.png)
 
 **Espacio del anfitrión**: el disco virtual de proxmox es de 80 GB y puede crecer hasta ese tamaño. El espacio libre en la unidad del anfitrión donde está el VDI es de 146,5 GB.
 
@@ -113,7 +113,7 @@ ip route
 ip -br link
 ```
 
-Captura 3:
+![Interfaces](../evidencias/capturas-o-salidas/s03-interfaces.png)
 
 |Interfaz / bridge | Adaptador de VirtualBox | Dirección | Función |
 |---|---|---|---|
@@ -127,7 +127,7 @@ curl -I https://deb.debian.org
 apt update
 ```
 
-Captura 4:
+![Comprobación Conectividad](../evidencias/capturas-o-salidas/s03-comprobacion-conectividad.png)
 
 Resultado: el nodo resuelve nombres y tiene salida a Internet. 'apt update' mostro un error 401 con el repositorio 'enterprise', ya que no hay suscripción.
 
