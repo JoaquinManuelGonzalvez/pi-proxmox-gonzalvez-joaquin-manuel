@@ -57,10 +57,12 @@ commit dentro de su entrada de bitacora.
 
 - Objetivo: revisar los accesos administrativos del nodo y ajustar el reparto de recursos (partes 3 y 4 de la fase 4).
 - Acciones realizadas:
+  - Se rehizo el apartado *Almacenamiento* de '03-instalacion-proxmox.md': se contrasto *Datacenter -> Storage* con la consola usando 'lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS', 'findmnt /', 'pvesm status' y 'df -h', se anadio la captura de la revision y se sustituyo la tabla por otra con backend, ruta o pool real, disco que lo sostiene, contenido habilitado y espacio disponible.
   - Se revisaron las cuentas, los permisos, los puertos y el firewall con 'pveum user list', 'pveum acl list', 'ss -tlnp' y 'pve-firewall status'.
   - Se consultaron los recursos del nodo con 'nproc', 'free -h' y 'df -h', y el resumen del nodo en el panel. Tambien se comprobaron los del anfitrion (Linux) con 'nproc' y 'free -h'.
   - Se elaboro la tabla de reparto de recursos de 'pve-gonzalvez', 'srv-aso', 'cli-linux` y el margen para plantillas, ISO y copias.
 - Decisiones y motivos:
+  - Se reorganizo el apartado de almacenamiento en una tabla con el disco y la ruta reales de cada almacenamiento, para dejar claro donde se guarda cada cosa y relacionar el panel con la consola.
   - No se crean usuarios adicionales: se administra con 'root@pam'.
   - Firewall de Proxmox desactivado, ya que no es un objetivo obligatorio de la practica; el aislamiento se mantiene con bridges independientes ('vmbr0' para la salida por NAT y 'vmbr1' para la red interna).
   - Reparto de recursos: nodo con 2 GB de RAM (en reposo usa 1,5 GiB); 'srv-aso' con 2 vCPU, 2 GB y 15 GB; 'cli-linux' con 1 vCPU, 1,5 GB y 10 GB; y el resto como margen. Se evita consumir todos los recursos para poder administrar el nodo mientras servidor y cliente funcionan.
