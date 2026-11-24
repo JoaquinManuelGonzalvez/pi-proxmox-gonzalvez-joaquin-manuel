@@ -133,4 +133,44 @@ Resultado: el nodo resuelve nombres y tiene salida a Internet. 'apt update' most
 
 ### Accesos administrativos
 
+```bash
+pveum user list
+pveum acl list
+ss -tlnp | egrep ':(22|8006)'
+pve-firewall status
+```
+
+![Comprobación Conectividad](../evidencias/capturas-o-salidas/s03-acceso-administrativo.png)
+| Cuenta | Permisos | Usos |
+|---|---|---|
+| root@pam | Administrador completo del nodo | Administración del nodo por panel y SSH |
+
+- Puertos en escucha: SSH (22/TCP, servicio sshd, en IPv4 e IPv6) y panel web (8006/TCP, servicio pveproxy), confirmado con 'ss -tlnp'.
+- Firewall de Proxmox: desactivado ('pve-firewall status' indica disabled/running), sin reglas configuradas.
+- Medidas de aislamiento del laboratorio: separación del tráfico mediante bridges independientes (vmbr0 para la salida externa por NAT y vmbr1 para la red interna solo-anfitrión).
+
+### 4. Reparto de recursos
+
+Recursos de la VM 'pve-gonzalvez' en VirtualBox: 3 CPU, 8192 MB de RAM y 80 GB de disco. Comprobados en el nodo con:
+
+```bash
+nproc
+free -h
+df -h
+```
+
+![Comprobación Conectividad](../evidencias/capturas-o-salidas/s03-reparto-recursos.png)
+
+| Elemento | CPU/vCPU | RAM | Disco o almacenamiento | Motivo del reparto |
+|---|---|---|---|---|
+| Nodo Proxmox | Reserva (3 CPU de la VM, compartidas) | 2 GB (en reposo usa 1,5 GB) | ~38 GB: 30 GB de raíz ('pve-root`, 4,2 GB usados y 24 GB libres) y ~8 GB de swap | Poder administrar el nodo mientras servidor y cliente funcionan |
+| srv-aso | 2 vCPU | 2 GB | 15 GB ('local-lvm') | Servicio principal del proyecto |
+| cli-linux | 1 vCPU | 1,5 GB | 10 GB ('lovac-lvm') | Máquina de pruebas, con menos carga que el servidor |
+Plantillas, ISO, copias y margen | n/a | 2,5 GB de margen | ~ 17 GB de margen en 'local-lvm'; ISO, plantillas y copias van a 'local/backups' (24 GB libres en la raíz) | Plantillas, ISO, copias y espacio libre |
+
+- Recursos de la VM comprobados en el nodo: 'nproc' = 3 CPU, 'free -h' = 7,8 GiB de RAM (1,5 usados y 6,3 disponibles) y disco virtual de 80 GB.
+- Total de RAM repartida: 8 GB (los 7,8 Gib que ve el nodo). Total de disco repartido: 80 GB.
+- Las vCPU de las máquinas se comparten entre las 3 CPU de la VM.
+- Reserva para el anfitrión: el equipo anfitrión (Linux) tiene 8 procesadores y 15 GiB de RAM. La VM usa 3 de los procesadores lógicos del equipo y 8 GB de su RAM, por lo que quedan 5 procesadores y unos 7 Gib de RAM para el sistema anfitrión.
+
 [Volver al indice](../README.md)
