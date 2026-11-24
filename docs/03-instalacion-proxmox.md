@@ -77,17 +77,19 @@ Comprobaciones realizadas desde la consola del nodo 'pve-gonzalvez' y desde el p
 Se revisó 'Datacenter -> Storage' y se contrastó con la consola:
 
 ```bash
+lsblk -o NAME,SIZE,TYPE,FSTYPE,MOUNTPOINTS
+findmnt /
 pvesm status
 df -h
 ```
 
 ![Revisión Almacenamiento](../evidencias/capturas-o-salidas/s03-revision-almacenamiento.png)
 
-| Almacenamiento | Tipo | Contenido que admite | Espacio libre (KiB) | Uso |
-|---|---|---|---|---|
-| local | Directorio | Backup, Import, ISO image, Container template | 24786372 | Guardar las ISO de instalación y las plantillas de contenedores LXC |
-| loval-lvm | LVM-thin | Disk image, Container | 31383552 | Guardar los discos de las máquinas srv-aso y cli-linux |
-| backups | Directorio | Backups | 24785876 | Destino de los Backups |
+| Almacenamiento | Backend | Ruta o pool real | Disco que lo sostiene | Contenido habilitado | Espacio disponible |
+|---|---|---|---|---|---|
+| local | Directorio | '/var/lib/vz', dentro del sistema de archivos raíz '/dev/mapper/pve-root' (ext4, 29.9 GB) | Disco VIrtual '/dev/sda' (80 GB, 'Proxmox_1.vdi'), partición sda3 (LVM), volumen lógico 'pve-root' | ISO, plantillas de contenedor y copias (según su configuración) | 23,6 GiB libres de 29,3 GiB (14,16 % usado)
+| loval-lvm | LVM-thin |Grupo pve, thin pool pve-data (29,9 GB) | Disco virtual '/dev/sda', partición sda3 (LVM) | Discos de VM y volumenes de contenedor | 29,9 GiB libres de 29,9 GiB (0% usado) |
+| backups | Directorio | '/mnt/backups', en el mismo sistema de archivos raíz que local | Disco virtual '/dev/sda' (pve-root) | Destino de los Backups | 23,6 GiB libres de 29,3 GiB (14,16 % usado) |
 
 Para las copias se preparó un directorio propio y se añadió como almacenamiento.
 
