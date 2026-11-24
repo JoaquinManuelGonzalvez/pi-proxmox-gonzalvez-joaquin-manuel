@@ -39,8 +39,8 @@ commit dentro de su entrada de bitacora.
 
 - Objetivo: revisar el almacenamiento y la red del nodo Proxmox (partes 1 y 2 de la fase 4).
 - Acciones realizadas:
-  - Se revisaron los almacenamientos en 'Datacenter > Storage' y con 'pvesm status' y 'df -h'.
-  - Se identificaron las interfaces, los bridges y la direccion de gestion en 'Nodo > System > Network' y con 'ip -br addr', 'ip route' y 'cat /etc/resolv.conf'.
+  - Se revisaron los almacenamientos en 'Datacenter -> Storage' y con 'pvesm status' y 'df -h'.
+  - Se identificaron las interfaces, los bridges y la direccion de gestion en 'Nodo -> System -> Network' y con 'ip -br addr', 'ip route' y 'cat /etc/resolv.conf'.
   - Se comprobo la conectividad del nodo con 'ping' a '8.8.8.8' y a 'deb.debian.org'.
 - Decisiones y motivos:
   - Se mantiene la red solo-anfitrion con IP de gestion 192.168.56.10/24 en 'vmbr1'.
