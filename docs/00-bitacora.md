@@ -34,8 +34,8 @@ commit dentro de su entrada de bitacora.
   - Esperado: que el instalador detectara KVM y que existiera /dev/kvm. Metodo: aviso del instalador y ls /dev/kvm. 
   - Esperado: vmbr1 activo con 192.168.56.10/24. Metodo: ip -br addr.
   - Esperado: acceso al panel desde el navegador del anfitrion. Metodo: https://192.168.56.10:8006.
- 
-    Sesion 04 - 17/11/2026
+
+## Sesion 04 - 17/11/2026
 
 - Objetivo: revisar el almacenamiento y la red del nodo Proxmox (partes 1 y 2 de la fase 4).
 - Acciones realizadas:
@@ -53,7 +53,7 @@ commit dentro de su entrada de bitacora.
   - Los 'ping' no reciben respuesta aunque el DNS resuelve.
   - El panel muestra que el repositorio *Enterprise* necesita suscripcion valida.
 
-Sesion 05 - 24/11/2026
+## Sesion 05 - 24/11/2026
 
 - Objetivo: revisar los accesos administrativos del nodo y ajustar el reparto de recursos (partes 3 y 4 de la fase 4).
 - Acciones realizadas:
